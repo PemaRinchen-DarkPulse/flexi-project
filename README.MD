@@ -1,5 +1,4 @@
-#RCSC Preparation
-- **Pema Rinchen** - [Pema Rinchen](https://github.com/PemaRinchen-DarkPulse)
+# RCSC Preparation
 
 The RCSC Prep website is a dedicated platform designed to assist Bhutanese graduates in preparing for the Royal Civil Service Commission (RCSC) exams. It offers personalized one-on-one classes and access to a variety of preparatory courses tailored to the RCSC's exam requirements. The website provides resources, study materials, and expert guidance to help candidates enhance their knowledge and skills, ensuring they are well-prepared for the competitive selection process. Whether through individual coaching or structured courses, the RCSC Preap website aims to support Bhutanese graduates in achieving success in their civil service career aspirations.
 

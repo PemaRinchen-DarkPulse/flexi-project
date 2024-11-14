@@ -1,10 +1,14 @@
-import Button from './components/button/Button'
+import MyButton from './components/button/MyButton'
+import NavBar from './components/button/NavBar'
+import CallToAcion from './components/CallToAcion'
 
 function App() {
   return (
     <>
-    <Button label="Sign In"/>
-    <Button label="Sign Up"/>
+    <MyButton label="Sign In"/>
+    <MyButton label="Sign Up"/>
+    <NavBar/>
+    <CallToAcion/>  
     </>
   )
 }

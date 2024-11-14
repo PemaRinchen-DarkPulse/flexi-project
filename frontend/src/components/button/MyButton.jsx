@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = (props) => {
+const MyButton = (props) => {
   return (
     <div>
       <button>{props.label}</button>
@@ -8,4 +8,4 @@ const Button = (props) => {
   )
 }
 
-export default Button
+export default MyButton
