@@ -1,6 +1,6 @@
 import React from 'react'
-
-const MyButton = (props) => {
+import { Button } from 'reactstrap'
+export const MyButton = (props) => {
   return (
     <div>
       <button>{props.label}</button>
@@ -8,4 +8,8 @@ const MyButton = (props) => {
   )
 }
 
-export default MyButton
+export const AuthButton=(props)=>{
+return(
+  <Button block color="primary">{props.label}</Button>
+)
+}
