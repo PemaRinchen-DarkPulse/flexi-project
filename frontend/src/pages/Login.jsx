@@ -51,7 +51,7 @@ const Login = () => {
                     <UserNavigate
                         pLabel="Don't have an account?"
                         aLabel="Sign Up"
-                        link="https://in.pinterest.com/pin/867083734506225998/"
+                        link="/signup"
                     />
                 </div>
             </div>

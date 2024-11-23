@@ -1,18 +1,21 @@
-import React from 'react'
+import React from 'react';
+import { CallToAcionBtn } from './button/MyButton';
 
-const CallToAcion = () => {
+const CallToAction = () => {
   return (
     <section className="py-6 dark:bg-gray-100 dark:text-gray-900">
-	<div className="container mx-auto flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48">
-		<h1 className="text-5xl font-bold leading-none text-center">Sign up now</h1>
-		<p className="text-xl font-medium text-center">At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur quam natus quis nihil quod, hic explicabo doloribus magnam neque, exercitationem eius sunt!</p>
-		<div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
-			<button className="px-8 py-3 text-lg font-semibold rounded dark:bg-violet-600 dark:text-gray-50">Get started</button>
-			<button className="px-8 py-3 text-lg font-normal border rounded dark:bg-gray-800 dark:text-gray-50 dark:border-gray-700">Learn more</button>
-		</div>
-	</div>
-</section>
-  )
-}
+      <div className="container mx-auto flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48">
+        <h1 className="text-5xl font-bold leading-none text-center">Join the RCSC Success Journey</h1>
+        <p className="text-xl font-medium text-center">
+          Prepare smarter, not harder. Access expert guidance, comprehensive resources, and tailored strategies to excel in your RCSC exam.
+        </p>
+        <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
+		<CallToAcionBtn link="/signup" label="Get Started" bgColor="#ff6b35"/>
+		<CallToAcionBtn link="#" label="Learn More" bgColor="#007bff"/>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default CallToAcion
+export default CallToAction;

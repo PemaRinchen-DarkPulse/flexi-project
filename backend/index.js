@@ -1,10 +1,18 @@
-const express=require('express');
-const app=express();
+const express=require('express')
+const path=require('path')
+const app=express()
+require('dotenv').config({path:path.resolve(__dirname,'../.env')})
 
-app.get('/',(req,res)=>{
-    res.send("Hello I am Pema Rinchen Please leave a message")
-})
+const port=process.env.PORT;
 
-app.listen(3000,()=>{
-    console.log("Server Unning on Port 3000")
-})
+app.get('/', (req, res) => {
+    res.send("Hello from Home");
+});
+
+app.get('/about', (req, res) => {
+    res.send("Hello from About");
+});
+
+app.listen(port, () => {
+    console.log(`Server Running on port ${port}`);
+});
