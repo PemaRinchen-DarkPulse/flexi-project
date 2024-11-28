@@ -77,10 +77,10 @@ const Footer = () => {
           <div className="col-4">
             <h4 style={{ fontWeight: 'bold', marginBottom: '20px' }}>Get In Touch</h4>
             <p style={{ marginBottom: '10px' }}>
-              Email: <a href="mailto:info@example.com" style={{ color: '#fff', textDecoration: 'none' }}>info@example.com</a>
+              Email: <a href="mailto:pemarinchen675@gmail.com" style={{ color: '#fff', textDecoration: 'none' }}>pemarinchen675@gmail.com</a>
             </p>
             <p style={{ marginBottom: '10px' }}>
-              Phone: <a href="tel:+123456789" style={{ color: '#fff', textDecoration: 'none' }}>+1 234 567 89</a>
+              Phone: <a href="tel:+919699881639" style={{ color: '#fff', textDecoration: 'none' }}>+91 969-988-1639</a>
             </p>
             <p style={{ marginBottom: '10px' }}>
               Address: 123 Learning Street, Knowledge City
@@ -89,7 +89,7 @@ const Footer = () => {
         </section>
 
         <div style={{ borderTop: '1px solid #444', marginTop: '40px', paddingTop: '20px', textAlign: 'center', fontSize: '0.9rem' }}>
-          © 2024 RCSC Ace. All rights reserved.
+          © 2024 RCSC Mentora. All rights reserved.
         </div>
       </div>
     </footer>

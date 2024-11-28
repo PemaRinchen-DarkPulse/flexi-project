@@ -9,9 +9,9 @@ const CallToAction = () => {
         <p className="text-xl font-medium text-center">
           Prepare smarter, not harder. Access expert guidance, comprehensive resources, and tailored strategies to excel in your RCSC exam.
         </p>
-        <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
-		<CallToAcionBtn link="/signup" label="Get Started" bgColor="#ff6b35"/>
-		<CallToAcionBtn link="#" label="Learn More" bgColor="#007bff"/>
+        <div className="flex justify-center space-x-8">
+          <CallToAcionBtn link="/signup" label="Get Started" bgColor="#ff6b35"/>
+          <CallToAcionBtn link="#" label="Learn More" bgColor="#007bff"/>
         </div>
       </div>
     </section>

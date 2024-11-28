@@ -26,6 +26,8 @@ const Hero = () => {
             width: '100%',
             maxWidth: '300px',
             height:"300px",
+            border: '5px solid #ff6b35',
+            boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)',
           }}
         />
       </div>
