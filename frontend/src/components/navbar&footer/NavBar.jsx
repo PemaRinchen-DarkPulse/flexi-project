@@ -1,5 +1,5 @@
 import React from 'react'
-import { CallToAcionBtn } from './MyButton'
+import { CallToAcionBtn } from '../button/MyButton'
 
 const NavBar = () => {
   return (
