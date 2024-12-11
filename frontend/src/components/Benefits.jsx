@@ -8,17 +8,16 @@ const Benefits = () => {
             <p style={{ textAlign: 'center', marginBottom: '40px', fontSize: '1.1rem' }}>
                 We are committed to helping you ace your RCSC exams with our carefully curated resources, expert guidance, and interactive learning tools. Here’s why thousands of students trust us for their preparation:
             </p>
-
             <section className="row text-center">
                 <div className="col-4">
-                    <Card title='Comprehensive Study Materials' subtitille='Access well-structured notes, practice questions, and mock tests tailored to the RCSC syllabus, ensuring you are fully prepared.' />
+                    <Card title='Affordable and Accessible' subtitille='Quality education at a price point designed for students.' />
                 </div>
                 <div className="col-4">
-                    <Card title='Expert Guidance' subtitille='Learn from experienced mentors who provide personalized tips, strategies, and insights to help you excel in your exams.' />
+                    <Card title='Flexible Learning' subtitille=' Study on your schedule with recorded sessions and live classes.' />
                 </div>
 
                 <div className="col-4">
-                    <Card title='Flexible and Interactive Learning' subtitille='Enjoy interactive quizzes, video lectures, and progress tracking tools, allowing you to learn at your own pace.' />
+                    <Card title='Personalized Feedback' subtitille='Get insights on your progress and areas of improvement.' />
                 </div>
             </section>
         </div>

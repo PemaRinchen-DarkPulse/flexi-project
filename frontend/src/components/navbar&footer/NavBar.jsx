@@ -1,5 +1,5 @@
 import React from 'react'
-import { CallToAcionBtn } from '../button/MyButton'
+import { JoinNowBtn } from '../button/MyButton'
 
 const NavBar = () => {
   return (
@@ -39,7 +39,7 @@ const NavBar = () => {
               <a className="nav-link active" aria-current="page" href="/login">Log in</a>
             </li>
             <li className="nav-item">
-                <CallToAcionBtn link="/signup" label="Join For Free"/>
+                <JoinNowBtn link="/signup" label="Join For Free"/>
             
             </li>
           </ul>
