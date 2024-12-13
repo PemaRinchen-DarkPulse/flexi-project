@@ -7,6 +7,7 @@ import Login from './pages/login'
 import Contact from './pages/Contact'
 import AboutUs from './pages/AboutUs'
 import CoursesDeatils from './components/courses/courseDetails/CoursesDeatils'
+import Setting from './components/settings/Setting'
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/about' element={<AboutUs/>}/>
+        <Route path='/settings' element={<Setting/>}/>
         <Route path='/coursedeatils' element={<CoursesDeatils/>}/>
       </Routes>
     </Router>
