@@ -4,10 +4,8 @@ const jwt = require('jsonwebtoken');
 const User = require('../model/user');
 const router = express.Router();
 
-// Signup Route
 router.post('/signup', async (req, res) => {
     const { userName, email, password } = req.body;
-
     try {
         const userExists = await User.findOne({ email });
         if (userExists) return res.status(400).json({ message: 'User already exists' });
@@ -22,7 +20,6 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-// Login Route
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
