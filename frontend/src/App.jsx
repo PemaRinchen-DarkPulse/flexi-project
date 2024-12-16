@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import AboutUs from './pages/AboutUs'
 import CoursesDeatils from './components/courses/courseDetails/CoursesDeatils'
 import Setting from './components/settings/Setting'
+import BrowseCourses from './pages/BrowseCourse'
 function App() {
   return (
     <Router>
@@ -19,6 +20,8 @@ function App() {
         <Route path='/about' element={<AboutUs/>}/>
         <Route path='/settings' element={<Setting/>}/>
         <Route path='/coursedeatils' element={<CoursesDeatils/>}/>
+        <Route path='/browseCourses' element={<BrowseCourses/>}/>
+
       </Routes>
     </Router>
   )

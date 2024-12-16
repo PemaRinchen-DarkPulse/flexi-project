@@ -41,3 +41,19 @@ export const EnrollBtn = (props) => {
     </a>
   )
 }
+
+export const LoadMore = ({ onClick }) => {
+  return (
+    <button className="btn btn-primary me-2" onClick={onClick}>
+      Show More
+    </button>
+  );
+};
+
+export const LoadLess = ({ onClick }) => {
+  return (
+    <button className="btn btn-secondary" onClick={onClick}>
+      Show Less
+    </button>
+  );
+};

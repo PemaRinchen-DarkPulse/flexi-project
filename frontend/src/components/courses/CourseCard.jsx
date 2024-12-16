@@ -50,13 +50,9 @@ const CourseCard = (props) => {
       )}
       <div className="m-3 d-flex flex-column mb-4">
         <h3 className="mt-3" style={styles.title}>{props.title}</h3>
-        {/* Profile Section */}
         <InstructorProfileSection />
-        {/* Description */}
         <p style={styles.description}>{props.description}</p>
-        {/* Details */}
         <Deatils/>
-        {/* Enroll Button */}
         <div className="mt-auto">
           <AuthButton label="Enroll Now" className="btn btn-primary btn-lg w-100" />
         </div>
