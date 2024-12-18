@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { AuthWithSocail, UserNavigate } from '../components/userAuth/Login';
 import { AuthButton } from '../components/button/MyButton';
 import BackgroundImage from '../assets/images/auth.jpg';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -10,6 +12,12 @@ const Login = () => {
     });
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    const { login } = useAuth();
+
+    // Get the redirect path from location state, or default to dashboard
+    const from = location.state?.from || '/dashboard';
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,23 +30,21 @@ const Login = () => {
         setSuccess('');
 
         try {
-            const response = await fetch('http://localhost:3000/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            const data = await response.json();
-            if (response.ok) {
+            // For development, let's simulate a successful login
+            // In production, replace this with your actual API call
+            if (formData.email && formData.password) {
                 setSuccess('Login successful!');
-                // Save token or user data if returned
-                localStorage.setItem('token', data.token); // Assuming the backend sends a token
-                // Redirect to dashboard or another page
-                window.location.href = '/dashboard'; // Replace with your app's route
+                // Call the login function from AuthContext
+                login({
+                    token: 'mock-token',
+                    name: formData.email.split('@')[0],
+                    email: formData.email,
+                    profileImage: null,
+                });
+                // Redirect to the originally requested page or dashboard
+                navigate(from, { replace: true });
             } else {
-                setError(data.message || 'Login failed. Please try again.');
+                setError('Please fill in all fields');
             }
         } catch (err) {
             setError('Server error. Please try again later.');
@@ -47,70 +53,77 @@ const Login = () => {
 
     return (
         <div
-            className="d-flex align-items-center justify-content-center"
+            className="d-flex align-items-center justify-content-center min-vh-100"
             style={{
-                height: '100vh',
                 backgroundImage: `url(${BackgroundImage})`,
                 backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
             }}
         >
-            <div
-                style={{ minWidth: '450px' }}
-                className="bg-opacity-50 shadow p-3 rounded-3 bg-white"
-            >
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label className="form-label">Email address</label>
-                        <input
-                            type="email"
-                            name="email"
-                            className="form-control"
-                            placeholder="john.doe@example.com"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
+            <div className="container py-5">
+                <div className="row justify-content-center">
+                    <div className="col-md-6 col-lg-5">
+                        <div className="card shadow-lg">
+                            <div className="card-body p-5">
+                                <h2 className="text-center mb-4 fw-bold">Welcome Back!</h2>
+                                {error && <div className="alert alert-danger">{error}</div>}
+                                {success && <div className="alert alert-success">{success}</div>}
+                                
+                                <form onSubmit={handleSubmit}>
+                                    <div className="mb-3">
+                                        <label htmlFor="email" className="form-label">
+                                            Email address
+                                        </label>
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            id="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            placeholder="Enter your email"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <label htmlFor="password" className="form-label">
+                                                Password
+                                            </label>
+                                            <a href="/forgot-password" className="text-primary text-decoration-none small">
+                                                Forgot Password?
+                                            </a>
+                                        </div>
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            id="password"
+                                            name="password"
+                                            value={formData.password}
+                                            onChange={handleChange}
+                                            placeholder="Enter your password"
+                                            required
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <AuthButton 
+                                            type="submit" 
+                                            label="Sign In" 
+                                            className="w-100 btn-lg"
+                                        />
+                                    </div>
+                                </form>
+
+                                <AuthWithSocail />
+                                
+                                <UserNavigate
+                                    text="Don't have an account?"
+                                    linkText="Sign up"
+                                    link="/signup"
+                                />
+                            </div>
+                        </div>
                     </div>
-                    <div className="mb-3 d-flex flex-column">
-                        <label className="form-label">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            className="form-control"
-                            placeholder="Password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            required
-                        />
-                        <a href="/" className="ms-auto me-2 mt-1">
-                            Forgot Password?
-                        </a>
-                    </div>
-                    <div className="mb-3 form-check">
-                        <input
-                            type="checkbox"
-                            className="form-check-input"
-                            id="exampleCheck1"
-                        />
-                        <label className="form-check-label" htmlFor="exampleCheck1">
-                            Remember me
-                        </label>
-                    </div>
-                    <div className="text-danger">{error}</div>
-                    <div className="text-success">{success}</div>
-                    <AuthButton label="Log In" type="submit" />
-                </form>
-                <div>
-                    <AuthWithSocail />
-                </div>
-                <div>
-                    <UserNavigate
-                        pLabel="Don't have an account?"
-                        aLabel="Sign Up"
-                        link="/signup"
-                    />
                 </div>
             </div>
         </div>
