@@ -13,6 +13,8 @@ import ProtectedRoute from './components/ProtectedRoute'
 import PracticeTest from './pages/PracticeTest'
 import VideoLecture from './pages/VideoLecture'
 import MockTest from './pages/MockTest'
+import Profile from './pages/Profile'
+import MyCourses from './pages/MyCourses'
 
 function App() {
   return (
@@ -26,6 +28,16 @@ function App() {
       <Route path='/browseCourses' element={<BrowseCourses/>}/>
       
       {/* Protected Routes */}
+      <Route path='/profile' element={
+        <ProtectedRoute>
+          <Profile/>
+        </ProtectedRoute>
+      }/>
+      <Route path='/my-courses' element={
+        <ProtectedRoute>
+          <MyCourses/>
+        </ProtectedRoute>
+      }/>
       <Route path='/settings' element={
         <ProtectedRoute>
           <Setting/>

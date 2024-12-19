@@ -121,14 +121,13 @@ const NavBar = () => {
                         Settings
                       </Link>
                     </li>
-                    <li><hr className="dropdown-divider" /></li>
                     <li>
-                      <button 
-                        className="dropdown-item text-danger" 
-                        onClick={handleLogout}
-                      >
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#" onClick={handleLogout}>
                         Logout
-                      </button>
+                      </a>
                     </li>
                   </ul>
                 </li>
