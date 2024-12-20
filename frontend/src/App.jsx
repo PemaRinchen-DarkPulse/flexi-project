@@ -25,6 +25,8 @@ function App() {
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/about' element={<AboutUs/>}/>
+      <Route path='/practice-test' element={<PracticeTest/>}/>
+      <Route path='/mock-tests' element={<MockTest/>}/>
       <Route path='/browseCourses' element={<BrowseCourses/>}/>
       
       {/* Protected Routes */}
@@ -53,19 +55,10 @@ function App() {
           <CoursesDeatils/>
         </ProtectedRoute>
       }/>
-      <Route path='/practice-test' element={
-        <ProtectedRoute>
-          <PracticeTest/>
-        </ProtectedRoute>
-      }/>
+     
       <Route path='/video-lectures' element={
         <ProtectedRoute>
           <VideoLecture/>
-        </ProtectedRoute>
-      }/>
-      <Route path='/mock-tests' element={
-        <ProtectedRoute>
-          <MockTest/>
         </ProtectedRoute>
       }/>
     </Routes>

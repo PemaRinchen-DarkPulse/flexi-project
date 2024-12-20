@@ -68,7 +68,7 @@ const StreakCalendar = () => {
   const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return (
-    <div className="col-4 border p-3 rounded-3 shadow-sm">
+    <div className="">
       <div style={headerStyle}>
         <button className="btn bg-secondary rounded-circle d-flex justify-content-center align-items-center text-white" onClick={handlePrevMonth}>
           &lt;
@@ -89,17 +89,47 @@ const StreakCalendar = () => {
             {weekday}
           </div>
         ))}
-        {[...Array(daysInMonth)].map((_, index) => {
-          const day = index + 1;
-          return (
-            <div
-              key={day}
-              style={highlightAll ? highlightedDayStyle : dayStyle}
-            >
-              {day}
-            </div>
-          );
-        })}
+        {(() => {
+          const firstDayOfMonth = new Date(currentYear, currentMonth - 1, 1).getDay();
+          const days = [];
+          
+          // Add empty cells for days before the first of the month
+          for (let i = 0; i < firstDayOfMonth; i++) {
+            days.push(
+              <div key={`empty-${i}`} style={dayStyle}>
+                
+              </div>
+            );
+          }
+          
+          // Add the days of the month
+          for (let day = 1; day <= daysInMonth; day++) {
+            const date = new Date(currentYear, currentMonth - 1, day);
+            const isToday = 
+              date.getDate() === today.getDate() &&
+              date.getMonth() === today.getMonth() &&
+              date.getFullYear() === today.getFullYear();
+              
+            days.push(
+              <div
+                key={day}
+                style={{
+                  ...dayStyle,
+                  ...(isToday && {
+                    backgroundColor: "#28a745",
+                    color: "white",
+                    fontWeight: "bold",
+                  }),
+                  ...(highlightAll && highlightedDayStyle),
+                }}
+              >
+                {day}
+              </div>
+            );
+          }
+          
+          return days;
+        })()}
       </div>
     </div>
   );

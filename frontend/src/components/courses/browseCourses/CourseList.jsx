@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import BrowseCourseCard from './BrowseCourseCard';
-import { LoadMore,LoadLess } from '../../button/MyButton';
 const BrowseCourseList = () => {
   const courses = [
     {
@@ -30,27 +29,14 @@ const BrowseCourseList = () => {
     }
   ];
 
-  const [visibleCourses, setVisibleCourses] = useState(4);
-
-  const handleShowMore = () => {
-    setVisibleCourses((prev) => Math.min(prev + 2, courses.length));
-  };
-
-  const handleShowLess = () => {
-    setVisibleCourses((prev) => Math.max(prev - 2, 4));
-  };
-
+  const [visibleCourses, setVisibleCourses] = useState(3);
   return (
     <div className="row p-3">
       {courses.slice(0, visibleCourses).map((course, index) => (
-        <div key={index} className="col-6">
+        <div key={index} className="col-4">
           <BrowseCourseCard title={course.title} description={course.description} />
         </div>
       ))}
-      <div className="col-12 text-center mt-3">
-        {visibleCourses < courses.length && <LoadMore onClick={handleShowMore} />}
-        {visibleCourses > 4 && <LoadLess onClick={handleShowLess} />}
-      </div>
     </div>
   );
 };

@@ -14,7 +14,7 @@ const Hero = () => {
         </h5>
         <div>
         <CallToAcionBtn link="/signup" label="Sign Up Now" bgColor="#ff6b35"/>
-        <CallToAcionBtn link="/browseCourses" label="Browse Courses →" bgColor="#007bff"/>
+        <CallToAcionBtn link="/browseCourses" label="Explore Courses →" bgColor="#007bff"/>
         </div>
       </div>
 
