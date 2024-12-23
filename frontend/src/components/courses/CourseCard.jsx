@@ -2,7 +2,7 @@ import React from "react";
 import { AuthButton } from "../button/MyButton";
 import { FaClock, FaCalendarAlt, FaDollarSign } from "react-icons/fa";
 import RactImg from "../../assets/images/courses/react.jpg";
-
+import { BsBook, BsPeople, BsClock } from "react-icons/bs"; // Import icons
 const CourseCard = (props) => {
   const styles = {
     card: {
@@ -16,6 +16,7 @@ const CourseCard = (props) => {
     thumbnail: {
       display: RactImg ? "block" : "none",
       width: "100%",
+      height:"180px",
       objectFit: "cover",
       borderTopLeftRadius: "0.5rem",
       borderTopRightRadius: "0.5rem",
@@ -48,14 +49,29 @@ const CourseCard = (props) => {
           <p>No Image Available</p>
         </div>
       )}
-      <div className="m-3 d-flex flex-column mb-4">
-        <h3 className="mt-3" style={styles.title}>{props.title}</h3>
-        <InstructorProfileSection />
-        <p style={styles.description}>{props.description}</p>
-        <Deatils/>
-        <div className="mt-auto">
-          <AuthButton label="Enroll Now" className="btn btn-primary btn-lg w-100" />
+      <div className="card-body m-3">
+        <h5 className="card-title fw-bold mb-3 d-flex align-items-center">
+          General Knowledge for RCSC
+        </h5>
+        <div>
+          <InstructorProfileSection />
         </div>
+        <div className="d-flex gap-2 mb-3">
+          <span className="badge bg-light text-dark">General Knowledge</span>
+          <span className="badge bg-light text-dark">Beginner</span>
+        </div>
+        <div className="d-flex text-muted mb-3">
+          <div className="me-4 d-flex align-items-center">
+            <BsPeople className="me-1" /> 1200 students
+          </div>
+          <div className="d-flex align-items-center">
+            <BsClock className="me-1" /> 8 weeks
+          </div>
+        </div>
+
+        <a href="#" className="btn btn-dark w-100">
+          View Course
+        </a>
       </div>
     </div>
   );
@@ -80,7 +96,7 @@ export const InstructorProfileSection = () => {
       height: "100%",
       objectFit: "cover",
     },
-  }
+  };
   return (
     <div className="d-flex align-items-center mb-3">
       <div style={styles.profileImage}>
@@ -95,9 +111,8 @@ export const InstructorProfileSection = () => {
         <small className="text-muted">Instructor</small>
       </div>
     </div>
-  )
-}
-
+  );
+};
 
 export const Deatils = () => {
   return (
@@ -117,5 +132,5 @@ export const Deatils = () => {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};

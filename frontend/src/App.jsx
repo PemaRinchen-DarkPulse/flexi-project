@@ -7,7 +7,6 @@ import Contact from './pages/Contact'
 import AboutUs from './pages/AboutUs'
 import CoursesDeatils from './components/courses/courseDetails/CoursesDeatils'
 import Setting from './components/settings/Setting'
-import BrowseCourses from './pages/BrowseCourse'
 import Dashboard from './pages/Dashboard'
 import ProtectedRoute from './components/ProtectedRoute'
 import PracticeTest from './pages/PracticeTest'
@@ -15,6 +14,7 @@ import VideoLecture from './pages/VideoLecture'
 import MockTest from './pages/MockTest'
 import Profile from './pages/Profile'
 import MyCourses from './pages/MyCourses'
+import ExploreCourses from './components/courses/ExploreCourses'
 
 function App() {
   return (
@@ -25,9 +25,9 @@ function App() {
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path='/about' element={<AboutUs/>}/>
+      <Route path='/explore-courses' element={<ExploreCourses/>}/>
       <Route path='/practice-test' element={<PracticeTest/>}/>
       <Route path='/mock-tests' element={<MockTest/>}/>
-      <Route path='/browseCourses' element={<BrowseCourses/>}/>
       
       {/* Protected Routes */}
       <Route path='/profile' element={

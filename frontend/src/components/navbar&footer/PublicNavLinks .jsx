@@ -6,7 +6,7 @@ const PublicNavLinks = () => {
     <ul className="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
       <div className="d-flex align-items-center gap-2">
         <li className="nav-item">
-        <Link className="nav-link" to="">
+        <Link className="nav-link" to="/explore-courses">
         Courses
       </Link>
         </li>
