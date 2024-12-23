@@ -16,7 +16,9 @@ app.use(express.json());
 mongoose.connect(mongo_url)
     .then(() => console.log("MongoDB Connection Success"))
     .catch(err => console.error("MongoDB Connection Failed:", err));
-
+app.get('/',(req,res)=>{
+    res.send("Welcom")
+})
 app.use('/', require('./routes/auth'));
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
