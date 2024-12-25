@@ -15,6 +15,7 @@ import MockTest from './pages/MockTest'
 import Profile from './pages/Profile'
 import MyCourses from './pages/MyCourses'
 import ExploreCourses from './components/courses/ExploreCourses'
+import PublishCourses from './pages/PublishCourses'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Route path='/explore-courses' element={<ExploreCourses/>}/>
       <Route path='/practice-test' element={<PracticeTest/>}/>
       <Route path='/mock-tests' element={<MockTest/>}/>
+      <Route path='/publish-courses' element={<PublishCourses/>}/>
       
       {/* Protected Routes */}
       <Route path='/profile' element={

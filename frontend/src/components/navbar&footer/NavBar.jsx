@@ -10,7 +10,7 @@ import AuthenticatedNavLinks from "./AuthenticatedNavLinks";
 const NavBar = () => {
   const { isAuthenticated } = useAuth();
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top p-3">
       <div className="container-fluid">
         <Link className="navbar-brand fw-bold text-primary" to="/">
           Logo
