@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
+import Blog from "./Blog";
 
 const ModuleDetails = () => {
   const [title, setTitle] = useState("");
@@ -43,7 +44,6 @@ const ModuleDetails = () => {
             Edit
           </button>
         </div>
-
         <div className="mb-3">
           <label htmlFor="moduleDescription" className="form-label">
             Module Description
@@ -57,26 +57,7 @@ const ModuleDetails = () => {
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-
-        <div className="mb-5">
-          <label htmlFor="moduleOutcomes" className="form-label">
-            Module Outcomes
-          </label>
-          <ReactQuill
-            value={outcomes}
-            onChange={handleOutcomeChange}
-            modules={{
-              toolbar: [
-                [{ list: "ordered" }, { list: "bullet" }],
-                [{ align: [] }],
-                ["link"],
-              ],
-            }}
-            placeholder="Enter Module Outcomes"
-            style={{ height: "150px" }}
-          />
-        </div>
-
+            <Blog/>
         <div>
           <button type="submit" className="btn btn-primary">
             Save
