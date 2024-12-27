@@ -14,7 +14,7 @@ const NewSectionForm = ({ addNewSection }) => {
 
   return (
     <div className="mb-4">
-      <label htmlFor="newSectionTitle" className="form-label">
+      <label htmlFor="newSectionTitle" className="form-label bolder">
         Enter Section Title
       </label>
       <input

@@ -50,6 +50,7 @@ const CourseMaterials = () => {
     <div>
       <ModuleDetails/>
       <div className="container my-5">
+        <h3 className="mb-3">Sections</h3>
         {sections.map((section, index) => (
           <Section
             key={index}
@@ -61,6 +62,7 @@ const CourseMaterials = () => {
             updateFileContentTitle={updateFileContentTitle}
           />
         ))}
+        <h3>Add New Section</h3>
         <NewSectionForm addNewSection={addNewSection} />
       </div>
     </div>

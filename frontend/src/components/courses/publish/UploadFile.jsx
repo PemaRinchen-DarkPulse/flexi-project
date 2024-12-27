@@ -17,7 +17,7 @@ const UploadFile = ({ onFileChange, accept = 'video/*' }) => {
   const handleDrop = (event) => {
     event.preventDefault();
     setDragging(false);
-    const file = event.dataTransfer.files[0]; // Take only the first file
+    const file = event.dataTransfer.files[0]; 
     handleFile(file);
   };
 

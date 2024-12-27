@@ -1,23 +1,25 @@
 import React, { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css"; // Import Quill styles
 import Blog from "./Blog";
 
 const ModuleDetails = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [outcomes, setOutcomes] = useState("");
-
-  const handleOutcomeChange = (value) => {
-    setOutcomes(value);
-  };
 
   return (
-    <div className="container my-5 p-4 shadow-sm rounded bg-light">
-      <h3 className="text-center mb-4">Module Details</h3>
+    <div className="container py-4">
+      {/* Header with aligned edit button */}
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h3 className="text-primary">Module Details</h3>
+        <button type="button" className="btn btn-outline-primary">
+          Edit
+        </button>
+      </div>
+
+      {/* Form */}
       <form>
-        <div className="mb-3 position-relative">
-          <label htmlFor="moduleTitle" className="form-label">
+        {/* Module Title */}
+        <div className="mb-4">
+          <label htmlFor="moduleTitle" className="form-label fw-bold">
             Module Title
           </label>
           <input
@@ -28,24 +30,11 @@ const ModuleDetails = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <button
-            type="button"
-            className="btn btn-outline-primary position-absolute top-50 end-0 translate-middle-y"
-            style={{
-              marginRight: "15px",
-              padding: "8px 15px",
-              fontSize: "14px",
-              borderRadius: "20px",
-              transition: "background-color 0.3s, color 0.3s",
-            }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = "#007bff"}
-            onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
-          >
-            Edit
-          </button>
         </div>
-        <div className="mb-3">
-          <label htmlFor="moduleDescription" className="form-label">
+
+        {/* Module Description */}
+        <div className="mb-4">
+          <label htmlFor="moduleDescription" className="form-label fw-bold">
             Module Description
           </label>
           <textarea
@@ -57,9 +46,15 @@ const ModuleDetails = () => {
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-            <Blog/>
-        <div>
-          <button type="submit" className="btn btn-primary">
+
+        {/* Blog Component */}
+        <div className="mb-4">
+          <Blog />
+        </div>
+
+        {/* Save Button */}
+        <div className="text-end">
+          <button type="submit" className="btn btn-primary px-4 py-2">
             Save
           </button>
         </div>

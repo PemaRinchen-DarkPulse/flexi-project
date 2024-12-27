@@ -4,7 +4,6 @@ const CourseDeatils = () => {
   const [tags, setTags] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [courseTitle, setCourseTitle] = useState("");
-  const [file, setFile] = useState(null); // State to store the selected file
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && inputValue.trim()) {
@@ -21,7 +20,6 @@ const CourseDeatils = () => {
   };
 
   const handleEditClick = () => {
-    // Logic for editing title (e.g., toggle edit mode)
     alert("Edit button clicked!");
   };
 
@@ -36,32 +34,31 @@ const CourseDeatils = () => {
 
   return (
     <>
-      <form className="coursesDeatils">
-        {/* Title Field with Edit Button */}
-        <div className="mb-3 d-flex justify-content-between align-items-center">
-          <div>
-            <label htmlFor="courseTitle" className="form-label">
-              Title
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="courseTitle"
-              placeholder="Enter course title"
-              value={courseTitle}
-              onChange={(e) => setCourseTitle(e.target.value)}
-            />
-          </div>
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={handleEditClick}
-          >
-            Edit
-          </button>
-        </div>
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h3>Course Details</h3>
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={handleEditClick}
+        >
+          Edit
+        </button>
+      </div>
 
-        {/* Description Field */}
+      <form className="coursesDetails">
+        <div className="mb-3">
+          <label htmlFor="courseTitle" className="form-label">
+            Title
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="courseTitle"
+            placeholder="Enter course title"
+            value={courseTitle}
+            onChange={(e) => setCourseTitle(e.target.value)}
+          />
+        </div>
         <div className="mb-3">
           <label htmlFor="courseDescription" className="form-label">
             Description
@@ -83,7 +80,7 @@ const CourseDeatils = () => {
             type="file"
             className="form-control"
             id="coverImage"
-            accept="image/*" // Only image files can be selected
+            accept="image/*"
             onChange={handleFileChange}
           />
         </div>
