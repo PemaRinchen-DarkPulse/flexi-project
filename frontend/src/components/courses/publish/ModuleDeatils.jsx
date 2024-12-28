@@ -53,7 +53,7 @@ const ModuleDetails = () => {
         </div>
 
         {/* Save Button */}
-        <div className="text-end">
+        <div className="">
           <button type="submit" className="btn btn-primary px-4 py-2">
             Save
           </button>
