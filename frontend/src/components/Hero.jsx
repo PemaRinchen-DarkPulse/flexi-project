@@ -12,7 +12,7 @@ const Hero = () => {
         <h5 style={{ fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '30px' }}>
           Your one-stop destination for expert guidance, study resources, and exam strategies.
         </h5>
-        <div>
+        <div className='d-flex'>
         <CallToAcionBtn link="/signup" label="Sign Up Now" bgColor="#ff6b35"/>
         <CallToAcionBtn link="/explore-courses" label="Explore Courses →" bgColor="#007bff"/>
         </div>
