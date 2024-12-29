@@ -4,6 +4,7 @@ import Module from "../components/courses/publish/CourseMaterials";
 import CoursesDeatilsSideBar from "../components/courses/publish/CoursesDeatilsSideBar";
 import NavBar from "../components/navbar&footer/NavBar";
 import Footer from "../components/navbar&footer/Footer";
+import ModuleSideBar from "../components/courses/publish/ModuleSideBar";
 
 const PublishCourses = () => {
   const [activeComponent, setActiveComponent] = useState("courseDetails");
@@ -34,10 +35,10 @@ const PublishCourses = () => {
                 Course Materials
               </button>
             </div>
-            <div className="mt-4">
-              {activeComponent === "courseDetails" && <CoursesDeatilsSideBar />}
-              {/* Uncomment below if ModuleSideBar is needed */}
-              {/* {activeComponent === "module" && <ModuleSideBar />} */}
+            <div className="">
+              <h3>Course Overview</h3>
+               <CoursesDeatilsSideBar />
+               <ModuleSideBar/>
             </div>
           </div>
 

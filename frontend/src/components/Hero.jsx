@@ -17,7 +17,6 @@ const Hero = () => {
         <CallToAcionBtn link="/explore-courses" label="Explore Courses →" bgColor="#007bff"/>
         </div>
       </div>
-
       <div className="col-md-5 text-center">
         <img className='rounded-circle'
           src={HeroImage}
