@@ -4,7 +4,6 @@ import Footer from '../components/navbar&footer/Footer';
 import SearchAndFilter from '../components/common/SearchAndFilter';
 
 const PracticeTest = () => {
-  // Mock data - replace with API calls later
   const mockTests = [
     {
       id: 1,
@@ -85,7 +84,6 @@ const PracticeTest = () => {
       <NavBar />
       <div className="container py-5" style={{ marginTop: "80px" }}>
         <h1 className="mb-4">Practice Tests</h1>
-        
         <SearchAndFilter
           onSearch={handleSearch}
           onFilterChange={handleFilterChange}

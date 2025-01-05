@@ -1,24 +1,18 @@
 import React, { useState } from "react";
 
-const ModuleSideBar = () => {
+const ModuleSideBar = ({ onModuleClick }) => {
   const [modules, setModules] = useState(["Module 1"]);
-  const [isCollapsed, setIsCollapsed] = useState(true); // Default to closed
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const handleAddModule = () => {
     setModules((prevModules) => [...prevModules, `Module ${prevModules.length + 1}`]);
-    setIsCollapsed(false); // Ensure the module section is expanded
+    setIsCollapsed(false);
   };
 
   const handleRemoveModule = (module) => {
-    // Filter out the removed module and re-index the remaining modules
     setModules((prevModules) =>
       prevModules.filter((mod) => mod !== module).map((mod, index) => `Module ${index + 1}`)
     );
-  };
-
-  const handleModuleClick = (module) => {
-    alert(`You clicked on ${module}`);
-    // Replace with custom logic (e.g., navigate to module details).
   };
 
   const toggleCollapse = () => {
@@ -27,7 +21,7 @@ const ModuleSideBar = () => {
 
   return (
     <div style={{ background: "#f8f9fa" }}>
-      <div className="border p-2 rounded-2 border">
+      <div className="border p-2 rounded-2">
         <div
           className="collapsable"
           onClick={toggleCollapse}
@@ -38,8 +32,8 @@ const ModuleSideBar = () => {
             alignItems: "center",
           }}
         >
-          <h5 style={{ color: "#495057" }}>Modules</h5>
-          <span style={{ color: "#007BFF", fontSize: "18px" }}>
+          <h5 className="m-2" style={{ color: "#495057" }}>Modules</h5>
+          <span className="m-2" style={{ color: "#007BFF", fontSize: "18px" }}>
             {isCollapsed ? "+" : "-"}
           </span>
         </div>
@@ -59,7 +53,7 @@ const ModuleSideBar = () => {
                 }}
               >
                 <span
-                  onClick={() => handleModuleClick(module)}
+                  onClick={() => onModuleClick(module)}
                   style={{
                     color: "#007BFF",
                     cursor: "pointer",

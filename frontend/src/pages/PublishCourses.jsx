@@ -8,6 +8,16 @@ import ModuleSideBar from "../components/courses/publish/ModuleSideBar";
 
 const PublishCourses = () => {
   const [activeComponent, setActiveComponent] = useState("courseDetails");
+  const [selectedModule, setSelectedModule] = useState(null);
+
+  const handleModuleClick = (module) => {
+    setActiveComponent("module");
+    setSelectedModule(module);
+  };
+
+  const handleBackToCourseDetails = () => {
+    setActiveComponent("courseDetails");
+  };
 
   return (
     <>
@@ -17,29 +27,9 @@ const PublishCourses = () => {
         <div className="row">
           {/* Sidebar */}
           <div className="col-md-4 mb-3">
-            <div className=" ">
-              <button
-                onClick={() => setActiveComponent("courseDetails")}
-                className={`btn ${
-                  activeComponent === "courseDetails" ? "btn-primary" : "btn-outline-secondary"
-                }`}
-              >
-                Course Details
-              </button>
-              <button
-                onClick={() => setActiveComponent("module")}
-                className={`btn ${
-                  activeComponent === "module" ? "btn-primary" : "btn-outline-secondary"
-                }`}
-              >
-                Course Materials
-              </button>
-            </div>
-            <div className="">
-              <h3>Course Overview</h3>
-               <CoursesDeatilsSideBar />
-               <ModuleSideBar/>
-            </div>
+            <h3>Course Overview</h3>
+            <CoursesDeatilsSideBar onBackToCourseDetails={handleBackToCourseDetails} />
+            <ModuleSideBar onModuleClick={handleModuleClick} />
           </div>
 
           {/* Main Content */}
@@ -47,7 +37,7 @@ const PublishCourses = () => {
             <div className="card shadow-sm">
               <div className="card-body">
                 {activeComponent === "courseDetails" && <CourseDeatils />}
-                {activeComponent === "module" && <Module />}
+                {activeComponent === "module" && <Module moduleName={selectedModule} />}
               </div>
             </div>
             {/* Action Buttons */}

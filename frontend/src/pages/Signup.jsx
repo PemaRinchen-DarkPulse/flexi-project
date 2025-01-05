@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { AuthWithSocail, UserNavigate } from "../components/userAuth/Login";
 import { AuthButton } from "../components/button/MyButton";
 import BackgroundImage from "../assets/images/auth.jpg";
@@ -31,7 +30,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/signup", {
+      const response = await fetch("https://rcsc-mentora-backend.vercel.app/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
